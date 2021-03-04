@@ -20,13 +20,13 @@ MainWindow::MainWindow(QWidget *parent)
     QPushButton *button = new QPushButton("Push me");
     mainLayout->addWidget(button);
 
-    connect(button, SIGNAL(clicked()), this, SLOT(firstButtonClicked()));
+    connect(button, &QPushButton::clicked, this, &MainWindow::buttonClicked);
 }
 
 MainWindow::~MainWindow()
 {
 }
 
-void MainWindow::firstButtonClicked() {
+void MainWindow::buttonClicked() {
     QMessageBox::information(0, "Yup", "You clicked the button.");
 }

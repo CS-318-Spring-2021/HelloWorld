@@ -12,6 +12,6 @@ public:
     ~MainWindow();
 
 public slots:
-    void firstButtonClicked();
+    void buttonClicked();
 };
 #endif // MAINWINDOW_H
