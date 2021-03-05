@@ -28,5 +28,5 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::buttonClicked() {
-    QMessageBox::information(0, "Yup", "You clicked the button.");
+    QMessageBox::information(nullptr, "Yup", "You clicked the button.");
 }
