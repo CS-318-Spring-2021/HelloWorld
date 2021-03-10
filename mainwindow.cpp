@@ -1,9 +1,8 @@
 #include "mainwindow.h"
 
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QPushButton>
-#include <QMessageBox>
+#include "shape.h"
+
+#include <QtWidgets>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,5 +27,13 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::buttonClicked() {
-    QMessageBox::information(nullptr, "Yup", "You clicked the button.");
+    Shape *s = new Rect(5.0, 4.0);
+
+    QString msg;
+    QTextStream out(&msg);
+    out << "The area of your shape is " << s->area();
+
+    QMessageBox::information(this, "Area", msg);
+
+    delete s;
 }
